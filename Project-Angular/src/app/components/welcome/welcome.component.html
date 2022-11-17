@@ -1,0 +1,55 @@
+<div class="flex-col justify-center items-center container">
+
+    <div class="flex-row gap-200">
+        <!-- Form Control Input -->
+        <div>
+            <div class="flex-row ">Form Control 1</div>
+            <div class="flex-col justify-start w-500 gap-20" *ngFor="let item of formControl1; let idx = index">
+                <ng-container *ngIf="item.type !== 'radio'">
+                    <label class="text-2xl">{{item.id}}</label>
+                    <input [id]="item.id" class="text-2xl" [type]="item.type" [(ngModel)]="formControl2[idx].value">
+                </ng-container>
+
+                <ng-container *ngIf="item.type === 'radio';else other_type">
+                    <label class="text-2xl">{{item.id}}</label>
+                    <div class="flex-row gap-15">
+                        <ng-container *ngFor="let option of item.options">
+                            <input [name]="item.id" [id]="option" class="text-xl" [type]="item.type"
+                                [checked]="option==item.value" (change)="onChangeRadio(idx, option)">
+                            <label class="text-xl">{{option}}</label>
+                        </ng-container>
+                    </div>
+                </ng-container>
+
+
+            </div>
+        </div>
+
+        <!-- Form Control View -->
+        <div>
+            <div class="flex-row ">Form Control 2</div>
+            <div class="flex-col justify-start w-500 gap-20" *ngFor="let item of formControl2; let idx = index">
+                <ng-container *ngIf="item.type !== 'radio'">
+                    <label class="text-2xl">{{item.id}}</label>
+                    <input disabled [id]="item.id" class="text-2xl" [type]="item.type"
+                        [(ngModel)]="formControl2[idx].value">
+                </ng-container>
+
+                <ng-container *ngIf="item.type === 'radio'">
+                    <label class="text-2xl">{{item.id}}</label>
+                    <div class="flex-row gap-15">
+                        <ng-container *ngFor="let option of item.options">
+                            <input [disabled]="option!==item.value" [id]="option" class="text-xl" [type]="item.type"
+                                [checked]="option===item.value">
+                            <label class="text-xl">{{option}}</label>
+                        </ng-container>
+                    </div>
+                </ng-container>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+{
+    "form": [
+        {
+            "id": "name",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "id": "email",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "id": "gender",
+            "value": "male",
+            "type": "radio",
+            "options": [
+                "male",
+                "female"
+            ]
+        },
+        {
+            "id": "game",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "id": "isKK",
+            "value": "",
+            "type": "number"
+        },
+        {
+            "id": "kob",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "id": "kkk",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "id": "nnn",
+            "value": "",
+            "type": "text"
+        }
+    ]
+}
